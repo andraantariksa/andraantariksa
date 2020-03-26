@@ -1,0 +1,31 @@
+title = "Andra's Blog"
+theme = "even"
+
+base_url = "https://andraaa.space"
+
+compile_sass = true
+
+highlight_code = true
+
+build_search_index = true
+
+taxonomies = [
+    {name = "categories", rss = true},
+    {name = "tags", rss = true},
+]
+
+[extra]
+author = "Andra Antariksa"
+
+even_title = "Andra's Blog"
+
+even_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "$BASE_URL/about", name = "About"},
+]
+
+katex_enable = true
+katex_enable = true
+katex_auto_render = true
