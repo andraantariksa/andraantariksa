@@ -11,7 +11,7 @@ class Element {
     dispatch() {
         square(this.x, this.y, BOX_SIZE);
         textSize(32);
-        text(this.number, this.x + 2, this.y + 6, 10);
+        text(this.number, this.x + 10, this.y + 6, 10);
     }
 
     move(velX, velY) {
@@ -108,8 +108,7 @@ var boxIdxToBeSwapped = -1;
 function reset() {
     array = [];
     for (let i = 0; i < 10; ++i) {
-        const randNumber = Math.floor(Math.random() * 89) + 10;
-        array.push(new Element(i * BOX_SIZE, 0, randNumber.toString()));
+        array.push(new Element(i * BOX_SIZE, 0, i.toString()));
     }
     i = array.length - 1;
     boxIdxToBeSwapped = -1;
@@ -120,8 +119,7 @@ function setup() {
     canvas.parent("fisher-yates-visualizer");
 
     for (let i = 0; i < 10; ++i) {
-        const randNumber = Math.floor(Math.random() * 89) + 10;
-        array.push(new Element(i * BOX_SIZE, 0, randNumber.toString()));
+        array.push(new Element(i * BOX_SIZE, 0, i.toString()));
     }
     i = array.length - 1;
 
