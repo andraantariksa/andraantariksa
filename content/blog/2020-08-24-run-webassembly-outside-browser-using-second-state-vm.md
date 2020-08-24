@@ -35,7 +35,7 @@ Why do we want to use WASM? Isn't JavaScript is able to handle everything in the
 
 In short, what we are going to do is just running a function in a compiled language from JavaScript (You can use Node or Deno for the runtime).
 
-![](/static/assets/misc/wasm/node-ssvm.png)
+![](/assets/misc/wasm/node-ssvm.png)
 
 > Best of 3 worlds: Rust's performance, correctness & maintainability; WebAssembly's safety & portability.
 

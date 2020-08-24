@@ -1,14 +1,9 @@
 title = "Andra's Blog"
 theme = "even"
-
 base_url = "https://andraaa.my.id"
-
 compile_sass = true
-
 highlight_code = true
-
 build_search_index = true
-
 taxonomies = [
     {name = "categories", rss = true},
     {name = "tags", rss = true},
@@ -16,6 +11,8 @@ taxonomies = [
 
 [extra]
 author = "Andra Antariksa"
+
+disqus_id = "blognya-andra"
 
 even_title = "Andra's Blog"
 
