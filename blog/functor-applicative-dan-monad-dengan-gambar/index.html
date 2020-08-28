@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Andra&#x27;s Blog - Functor, Applicative, dan Monad dengan Gambar</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+                  onload="renderMathInElement(document.body);"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+          
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50631312-12"></script>
+          <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-50631312-12');
+          </script>
+          
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Andra&#x27;s Blog</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;andraaa.my.id">Andra&#x27;s Blog</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/functor-applicative-dan-monad-dengan-gambar/#functor" class="toc-link">Functor</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/functor-applicative-dan-monad-dengan-gambar/#sebenarnya-apa-sih-functor-itu" class="toc-link">Sebenarnya, apa sih Functor itu?</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/functor-applicative-dan-monad-dengan-gambar/#applicative" class="toc-link">Applicative</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/functor-applicative-dan-monad-dengan-gambar/#monad" class="toc-link">Monad</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/functor-applicative-dan-monad-dengan-gambar/#kesimpulan" class="toc-link">Kesimpulan</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;functor-applicative-dan-monad-dengan-gambar&#x2F;">Functor, Applicative, dan Monad dengan Gambar</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-03-12</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Ada sebuan nilai (<em>value</em>) dasar:</p>
+<p><img src="http://adit.io/imgs/functors/value.png" alt="" /></p>
+<p>Dan kita tahu bagaimana cara mengaplikasikan suatu fungsi pada nilai tersebut:</p>
+<p><img src="http://adit.io/imgs/functors/value_apply.png" alt="" /></p>
+<p>Cukup mudah. Mari kita perdalam hal ini dengan menganggap bahwa suatu nilai dapat berada di dalam suatu konteks. Sekarang Anda cukup menganggap bahwa konteks itu sebagai kotak yang dapat Anda berikan suatu nilai di dalamnya:</p>
+<p><img src="http://adit.io/imgs/functors/value_and_context.png" alt="" /></p>
+<p>Sekarang, ketika Anda mengaplikasikan suatu fungsi kepada nilai tersebut, Anda akan mendapatkan hasil yang berbeda bergantung dengan konteks yang ada. Ide ini merupakan awal mula munculnya <em>Funtor</em>, <em>Applicative</em>, <em>Monad</em>, <em>Arrow</em>, dan lainnya. Salah satunya tipe data Maybe yang memiliki dua konteks yang saling berhubungan:</p>
+<p><img src="http://adit.io/imgs/functors/context.png" alt="" /></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">data Maybe a = Nothing | Just a
+</span></code></pre>
+<p>Pada bagian kedua kita akan melihat bagaimana fungsi bisa memberikan sesuatu yang berbeda ketika diapliaksikan ke <code>Just a</code> dan <code>Nothing</code>. Pertama, mari kita diskusikan Functor!</p>
+<h2 id="functor">Functor</h2>
+<p>Ketika suatu nilai terbungkus dalam suatu konteks, Anda tidak dapat mengaplikasikan fungsi pada biasanya:</p>
+<p><img src="http://adit.io/imgs/functors/no_fmap_ouch.png" alt="" /></p>
+<p>Disaat inilah <code>fmap</code> muncul. <code>fmap</code> tahu bagaimana caranya mengaplikasikan fungsi ke suatu nilai yang terbungkus oleh suatu konteks. Contohnya, jika Anda ingin mengaplikasikan fungsi <code>(+3)</code> ke <code>Just 2</code> menggunakan <code>fmap</code>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; fmap (+3) (Just 2)
+Just 5
+</span></code></pre>
+<p>Bam! fmap menunjukan kita hasilnya! Tapi bagaimana <code>fmap</code> tahu cara mengaplikasikan fungsi tersebut?</p>
+<h2 id="sebenarnya-apa-sih-functor-itu">Sebenarnya, apa sih Functor itu?</h2>
+<p><em>Functor</em> merupakan suatu <em>typeclass</em>. Di bawah ini merupakan definisi dari <em>Functor</em>:</p>
+<p><img src="http://adit.io/imgs/functors/functor_def.png" alt="" /></p>
+<p><em>Functor</em> adalah suatu tipe data yang mendefinisikan bagaimana <code>fmap</code> mengaplikasikan tipe data tersebut. Ini bagaimana cara <code>fmap</code> bekerja:</p>
+<p><img src="http://adit.io/imgs/functors/fmap_def.png" alt="" /></p>
+<p>Jadi kita bisa melakukan ini:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; fmap (+3) (Just 2)
+Just 5
+</span></code></pre>
+<p>Dan <code>fmap</code> secara ajaib mengaplikasikan fungsi tersebut, karena <code>Maybe</code> merupakan <em>Functor</em>. <em>Functor</em> mendefinisikan bagaimana <code>fmap</code> dapat berlaku pada <code>Just</code> dan <code>Nothing</code>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">instance Functor Maybe where
+    fmap func (Just val) = Just (func val)
+    fmap func Nothing = Nothing
+</span></code></pre>
+<p>Sebenarnya, ini yang terjadi di balik layar ketika kita menulis <code>fmap (+3) (Just 2)</code>:</p>
+<p><img src="http://adit.io/imgs/functors/fmap_just.png" alt="" /></p>
+<p>Jadi seperti, &quot;Oke <code>fmap</code>, tolong dong aplikasikan <code>(+3)</code> ke <code>Nothing</code>&quot;</p>
+<p><img src="http://adit.io/imgs/functors/fmap_nothing.png" alt="" /></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; fmap (+3) Nothing
+Nothing
+</span></code></pre>
+<p><img src="http://adit.io/imgs/functors/bill.png" alt="Bill O'Reilly being totally ignorant about the Maybe functor" /></p>
+<p>Seperti Morpheus di film Matrix, <code>fmap</code> tahu apa yang harus ia lakukan; pada awalnya anda memulai dengan <code>Nothing</code>, dan anda berakhir dengan <code>Nothing</code>! Sekarang semua menjadi masuk akal, mengapa ada tipe data <code>Maybe</code>. Sebagai contoh, ini bagaimana Anda bekerja dengan <em>database</em> di bahasa pemrograman yang tidak memiliki sintaks <code>Maybe</code>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">post = Post.find_by_id(1)
+if post
+  return post.title
+else
+  return nil
+end
+</span></code></pre>
+<p>Tapi, di Haskell:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">fmap (getPostTitle) (findPost 1)
+</span></code></pre>
+<p>Jika <code>findPost</code> mengembalikan <code>post</code>, kita akan mendapatkan <code>title</code>-nya dengan <code>getPostTitle</code>. Jika <code>findPost</code> mengembalikan <code>Nothing</code>, kita akan mengembalikan <code>Nothing</code>! Cukup elegan kan? Fungsi <code>&lt;$&gt;</code> merupakan <code>fmap</code> versi infiks dari <code>fmap</code>, jadi Anda akan lebih sering menemukannya seperti ini:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">getPostTitle &lt;$&gt; (findPost 1)
+</span></code></pre>
+<p>Contoh lain: apa yang terjadi ketika Anda mengaplikasikan fungsi ke list?</p>
+<p><img src="http://adit.io/imgs/functors/fmap_list.png" alt="" /></p>
+<p>List ternyata merupakan <em>functor</em> juga! Di bawah ini merupakan definisi <em>Functor</em> dari list</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">instance Functor [] where
+    fmap = map
+</span></code></pre>
+<p>Oke, oke, satu contoh terakhir: apa yang terjadi ketika Anda mengaplikasikan fungsi ke fungsi lain?</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">fmap (+3) (+1)
+</span></code></pre>
+<p>Ini adalah ilustrasi dari fungsi:</p>
+<p><img src="http://adit.io/imgs/functors/function_with_value.png" alt="" /></p>
+<p>Ini adalah ilustrasi saat fungsi diaplikasikan ke fungsi lain:</p>
+<p><img src="http://adit.io/imgs/functors/fmap_function.png" alt="" /></p>
+<p>Hasilnya merupakan fungsi lain!</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; import Control.Applicative
+&gt; let foo = fmap (+3) (+2)
+&gt; foo 10
+15
+</span></code></pre>
+<p>Jadi fungsi merupakan Functor juga!</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">instance Functor ((-&gt;) r) where
+    fmap f g = f . g
+</span></code></pre>
+<p>Ketika Anda menggunakan <code>fmap</code> pada sebuah fungsi, itu sama saja dengan melakukan melakukan fungsi komposisi!</p>
+<h2 id="applicative">Applicative</h2>
+<p><em>Applicative</em> membuat semuanya menjadi lebih menarik. Mirip seperti Functor, nilai yang dibuat yang terbungkus oleh konteks</p>
+<p><img src="http://adit.io/imgs/functors/value_and_context.png" alt="" /></p>
+<p>Tetapi fungsinya juga terbungkus di dalam konteks juga!</p>
+<p><img src="http://adit.io/imgs/functors/function_and_context.png" alt="" /></p>
+<p>Yah. Begitulah. Applicative benar-benar menarik. Fungsi <code>&lt;*&gt;</code> didefinisikan di <code>Control.Applicative</code>, yang mana fungsi tersebut dapat mengaplikasikan fungsi yang terbungkus di suatu konteks ke suatu nilai yang terbungkus di suatu konteks:</p>
+<p><img src="http://adit.io/imgs/functors/applicative_just.png" alt="" /></p>
+<p>i.e:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">Just (+3) &lt;*&gt; Just 2 == Just 5
+</span></code></pre>
+<p><code>&lt;*&gt;</code> dapat menjadi lebih menarik dalam situasi tertentu. Contohnya:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; [(*2), (+3)] &lt;*&gt; [1, 2, 3]
+[2, 4, 6, 4, 5, 6]
+</span></code></pre>
+<p><img src="http://adit.io/imgs/functors/applicative_list.png" alt="" /></p>
+<p>Ada beberapa hal yang dapat <em>Applicative</em> lakukan dan tidak dapat dilakukan oleh <em>Functor</em>. Bagaimana caranya mengaplikasikan fungsi yang memiliki dua argumen ke dua nilai yang terbungkus</p>
+<p>Here's something you can do with Applicatives that you can't do with Functors. How do you apply a function that takes two arguments to two wrapped values?</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; (+) &lt;$&gt; (Just 5)
+Just (+5)
+&gt; Just (+5) &lt;$&gt; (Just 4)
+ERROR ??? MENGAPA ???
+</span></code></pre>
+<p><em>Applicative</em>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; (+) &lt;$&gt; (Just 5)
+Just (+5)
+&gt; Just (+5) &lt;*&gt; (Just 3)
+Just 8
+</span></code></pre>
+<p><em>Applicative</em> mengalahkan <em>Functor</em> dalam hal ini. &quot;Pria besar bisa menggunakan fungsi dengan berapapun jumlah argumennya&quot;, katanya <em>Applicative</em>. &quot;Dengan <code>&lt;$&gt;</code> dan <code>&lt;*&gt;</code>, aku bisa menggunakan fungsi yang membutuhkan nilai yang terbungkus. Dan aku bisa mengaplikasikan semua nilainya, dan aku akan mendapatkan nilainya terbungkus kembali! HAHAHAHA!&quot;</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; (*) &lt;$&gt; Just 5 &lt;*&gt; Just 3
+Just 15
+</span></code></pre>
+<p>Dan, hei! Sebenarnya ada fungsi <code>liftA2</code> yang melakukan hal yang sama:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; liftA2 (*) (Just 5) (Just 3)
+Just 15
+</span></code></pre><h2 id="monad">Monad</h2>
+<p>Langkah-langkah memahami <em>Monad</em>:</p>
+<ul>
+<li>Punya gelar S3 di bidang ilmu komputer.</li>
+<li>Buang gelar itu, karena Anda tidak memerlukan itu untuk memahami <em>Monad</em>!</li>
+</ul>
+<p><em>Monad</em> membuat semuanya menjadi lebih menarik.</p>
+<p><em>Functor</em> mengaplikasikan fungsi ke nilai yang terbungkus:</p>
+<p><img src="http://adit.io/imgs/functors/fmap.png" alt="" /></p>
+<p><em>Applicative</em> mengaplikasikan fungsi yang terbungkus ke nilai yang terbungkus:</p>
+<p><img src="http://adit.io/imgs/functors/applicative.png" alt="" /></p>
+<p>Monad mengaplikasikan fungsi yang mengembalikan nilai yang terbungkus ke nilai yang terbungkus. <em>Monad</em> memiliki fungsi <code>&gt;&gt;=</code> (Baca: <em>bind</em>) untuk melakukan hal tersebut.</p>
+<p>Mari kita lihat contohnya. <code>Maybe</code> merupakan Monad:</p>
+<p><img src="http://adit.io/imgs/functors/context.png" alt="Just a monad hanging out" /></p>
+<p>Anggap <code>half</code> merupakan fungsi yang hanya dapat bekerja dengan bilangan genap:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">half x = if even x
+           then Just (x `div` 2)
+           else Nothing
+</span></code></pre>
+<p><img src="http://adit.io/imgs/functors/half.png" alt="" /></p>
+<p>Bagaimana jika kita mengaplikasikan nilai yang terbungkus pada fungsi <code>half</code>?</p>
+<p><img src="http://adit.io/imgs/functors/half_ouch.png" alt="" /></p>
+<p>Kita perlu menggunakan <code>&gt;&gt;=</code> untuk &quot;menyedot&quot; nilai yang terbungkus dan akan diaplikasikan ke dalam fungsi <code>half</code>. Di bawah ini merupakan foto dari <code>&gt;&gt;=</code>:</p>
+<p><img src="http://adit.io/imgs/functors/plunger.jpg" alt="" /></p>
+<p>Beginilah cara fungsi <code>&gt;&gt;=</code> bekerja:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; Just 3 &gt;&gt;= half
+Nothing
+&gt; Just 4 &gt;&gt;= half
+Just 2
+&gt; Nothing &gt;&gt;= half
+Nothing
+</span></code></pre>
+<p>Apa yang terjadi sebenarnya? <em>Monad</em> adalah <em>typeclass</em> lain. Di bawah ini merupakan sebagian definisi dari <em>Monad</em>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">class Monad m where
+    (&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b
+</span></code></pre>
+<p>Dimana <code>&gt;&gt;=</code> adalah:</p>
+<p><img src="http://adit.io/imgs/functors/bind_def.png" alt="" /></p>
+<p>Jadi <code>Maybe</code> adalah Monad:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">instance Monad Maybe where
+    Nothing &gt;&gt;= func = Nothing
+    Just val &gt;&gt;= func  = func val
+</span></code></pre>
+<p>Ini yang terjadi dengan <code>Just 3</code>!</p>
+<p><img src="http://adit.io/imgs/functors/monad_just.png" alt="" /></p>
+<p>Dan jika Anda memasukan <code>Nothing</code> ke dalam fungsi tersebut.</p>
+<p><img src="http://adit.io/imgs/functors/monad_nothing.png" alt="" /></p>
+<p>Anda juga bisa menggabungkan fungsi tersebut:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">&gt; Just 20 &gt;&gt;= half &gt;&gt;= half &gt;&gt;= half
+Nothing
+</span></code></pre>
+<p><img src="http://adit.io/imgs/functors/monad_chain.png" alt="" /></p>
+<p>Keren! Sekarang kita tahu kalau <code>Maybe</code> merupakan <em>Functor</em>, <em>Applicative</em>, dan juga <em>Monad</em>.
+Sekarang mari kita membahas contoh lainnya: <em>Monad</em> <code>IO</code>:</p>
+<p><img src="http://adit.io/imgs/functors/io.png" alt="" /></p>
+<p>Kita akan membahas tiga fungsi yang umum digunakan. <code>getLine</code> yang tidak memiliki argumen dan mengambil input dari pengguna:</p>
+<p><img src="http://adit.io/imgs/functors/getLine.png" alt="" /></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">getLine :: IO String
+</span></code></pre>
+<p><code>readFile</code> menerima string (berupa nama berkas) dan mengembalikan konten berkas:</p>
+<p><img src="http://adit.io/imgs/functors/readFile.png" alt="" /></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">readFile :: FilePath -&gt; IO String
+</span></code></pre>
+<p><code>putStrLn</code> menerima string dan menampilkannya:</p>
+<p><img src="http://adit.io/imgs/functors/putStrLn.png" alt="" /></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">putStrLn :: String -&gt; IO ()
+</span></code></pre>
+<p>Ketiga fungsi di atas menerima nilai biasa (atau tidak) dan mengembalikan nilai yang terbungkus. Kita dapat menggabungkan operasi ketiganya menggunakan <code>&gt;&gt;=</code>!</p>
+<p><img src="http://adit.io/imgs/functors/monad_io.png" alt="" /></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">getLine &gt;&gt;= readFile &gt;&gt;= putStrLn
+</span></code></pre>
+<p>Mantap! Ajegile <em>Monad</em>!</p>
+<p>Haskell juga menyediakan kita dengan <em>syntatic sugar</em> untuk <em>Monad</em>, namanya notasi <code>do</code>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">foo = do
+    filename &lt;- getLine
+    contents &lt;- readFile filename
+    putStrLn contents
+</span></code></pre><h2 id="kesimpulan">Kesimpulan</h2>
+<ol>
+<li><em>Functor</em> merupakan tipe data yang mengimplementasikan <em>typeclass</em> <em>Functor</em>.</li>
+<li><em>Applicative</em> merupakan tipe data yang mengimplementasikan <em>typeclass</em> <em>Applicative</em>.</li>
+<li><em>Monad</em> merupakan tipe data yang mengimplementasikan <em>typeclass</em> <em>Monad</em>.</li>
+<li><em>Maybe</em> mengimplementasikan ketiga-tiganya, jadi <em>Maybe</em> adalah <em>Functor</em>, <em>Applicative</em>, sekaligus <em>Monad</em>.</li>
+</ol>
+<p>Apa perbedaan diantara ketiga-tiganya?</p>
+<p><img src="http://adit.io/imgs/functors/recap.png" alt="" /></p>
+<p><em>functors</em>: anda mengaplikasikan fungsi ke data yang terbungkus menggunakan <code>fmap</code> atau <code>&lt;$&gt;</code>
+<em>applicatives</em>: anda mengaplikasikan fungsi yang terbungkus ke data yang terbungkus menggunakan <code>&lt;$&gt;</code> atau <code>liftA</code>
+<em>monads</em>: anda mengaplikasikan fungsi yang mengembalikan nilai yang terbungkus dengan nilai yang terbungkus menggunakan <code>&gt;&gt;=</code> atau <code>liftM</code></p>
+<hr />
+<p>Entri ini merupakan terjemahan dari <a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html">Functors, Applicatives, And Monads In Pictures</a> oleh Aditya Bhargava</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;programming&#x2F;">#programming</a>
+                    
+                </div>
+            
+
+            blognya-andra
+            
+                <div id="disqus_thread"></div>
+                <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://blognya-andra.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;sign-extension&#x2F;">‹ Sign Extension</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;algoritma-pengacakan-fisher-yates&#x2F;">Algorima Pengacakan Fisher—Yates ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;andraaa.my.id&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

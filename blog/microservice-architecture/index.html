@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Andra&#x27;s Blog - Microservice Architecture</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+                  onload="renderMathInElement(document.body);"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+          
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50631312-12"></script>
+          <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-50631312-12');
+          </script>
+          
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Andra&#x27;s Blog</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;andraaa.my.id">Andra&#x27;s Blog</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/microservice-architecture/#okay-now-what-is-application-programming-interface-api" class="toc-link">Okay, now what is Application Programming Interface (API) ?</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/microservice-architecture/#what-are-the-benefit-and-the-drawback-for-microservice-architecture" class="toc-link">What are the Benefit and the Drawback for Microservice Architecture?</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://andraaa.my.id/blog/microservice-architecture/#pros" class="toc-link">Pros</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://andraaa.my.id/blog/microservice-architecture/#cons" class="toc-link">Cons</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/microservice-architecture/#monolithic-architecture-vs-microservice-architecture" class="toc-link">Monolithic Architecture vs Microservice Architecture</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/microservice-architecture/#simple-example" class="toc-link">Simple Example</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://andraaa.my.id/blog/microservice-architecture/#user-story" class="toc-link">User Story</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://andraaa.my.id/blog/microservice-architecture/#demo" class="toc-link">Demo</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/microservice-architecture/#further-reading" class="toc-link">Further Reading</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;microservice-architecture&#x2F;">Microservice Architecture</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-09-30</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--seen3BGm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/2697570/49395813-cd094980-f737-11e8-9e9a-6c20db5720c4.jpg" alt="Monolithic Architecture vs Microservice Architecture" /></p>
+<p>Microservices - also known as the microservice architecture - is an architectural style that structures an application as a collection of small independent services, rather than one monstrously huge service (<a href="https://en.wikipedia.org/wiki/Monolithic_application">Monolithic</a>). And to &quot;combine&quot; the service into one application, they are interacting each other (usually) using application programming interface. [<a href="https://martinfowler.com/articles/microservices.html">martinfolwer.com</a>]</p>
+<h2 id="okay-now-what-is-application-programming-interface-api">Okay, now what is Application Programming Interface (API) ?</h2>
+<p><img src="https://qph.fs.quoracdn.net/main-qimg-45b9ac150523239d107c649e89f12ced" alt="Pizza Purchasing API" /></p>
+<p>In short, it just how the application interact each other. If you want to have an application that can communicate with another application to use the data, you can make an API for it.</p>
+<p>For the example, if you want to know the weather, you can try to use <a href="https://openweathermap.org/api">OpenWeatherMap API</a>. So, you only have to get the data from OpenWeatherMap and you don't have to implement the weather application and provide the data by yourself, you only have to &quot;ask&quot; their website for the data.</p>
+<h2 id="what-are-the-benefit-and-the-drawback-for-microservice-architecture">What are the Benefit and the Drawback for Microservice Architecture?</h2>
+<h3 id="pros">Pros</h3>
+<ul>
+<li>The application logic will be separated on each service, so the services can manage their own (developer) team independenly. Managing small team is way more easier than managing a big team. It reduce the burden for the developer to maintain and develop the application</li>
+<li>It is really easy to adopt a new technology stack. Every service can implement their own tools and programming language</li>
+<li>Reduce the program coupling</li>
+<li>It is more reliable. When one service is shut off, it won't be a problem for the service that doesn't have any correlation with it</li>
+<li>Code review and quality assurance become easier</li>
+<li>Development and deploying much easier. Most of company want their application to came up to the market quickly</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<ul>
+<li>It adds the complexity to develop the application because microservice is a <a href="https://en.wikipedia.org/wiki/Distributed_computing">distributed system</a>. No joke, it's <strong>really</strong> complex</li>
+<li>Every service has their own database schema that runs independently. It will be a challenge to maintain the data consistency</li>
+</ul>
+<h2 id="monolithic-architecture-vs-microservice-architecture">Monolithic Architecture vs Microservice Architecture</h2>
+<p><img src="https://www.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-1_monolithic-architecture.png" alt="Before implementing microservice" /></p>
+<p><strong>Before implementing microservice</strong> [<a href="https://www.nginx.com/blog/introduction-to-microservices/">Nginx</a>]</p>
+<p><img src="https://www.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part1-2_microservices-architecture.png" alt="After implementing microservice" /></p>
+<p><strong>After implementing microservice</strong> [<a href="https://www.nginx.com/blog/introduction-to-microservices/">Nginx</a>]</p>
+<p>Look at the figure <strong>Before implementing microservice</strong>, every application logic are contained in one huge service. It will be very hard to be managed by big company that have (lets say) 100 developer as a one team to manage the huge monolithic application.</p>
+<p>Applications written in this style are extremely common. They are simple to develop . These kinds of applications are also simple to test. You just have to copy the packaged application to a server. You can also scale the application by running multiple copies behind a load balancer (<a href="https://en.wikipedia.org/wiki/Replication_(computing)">Replication</a>). In the early stages of the project it works well, but it would be a mess when the project are growing larger.</p>
+<p>When you look at the figure <strong>After implementing microservice</strong>, as you can see, the application logic are separated each other on their correspond service. It will be very easy to managed by 100 folks, with every service has a different team that consist of 8-10 people.</p>
+<p>The apps don’t, however, have direct access to the backend services. Instead, communication is mediated by an entry point, API Gateway. The API Gateway is responsible for tasks such as load balancing, caching, access control, API metering, and monitoring.</p>
+<p>Each of the services may have a different database, API protocol and programming language. It would be benefit a lot since the needs of a service could be vary.</p>
+<p><img src="https://microservices.io/i/bffe.png" alt="Another example of microservice" /></p>
+<p><strong>Another example of microservice architecture</strong> <a href="https://microservices.io/i/bffe.png">microservices.io</a></p>
+<h2 id="simple-example">Simple Example</h2>
+<p>Lets make a simple microservice example for an authentication using two service, <strong>gateway service</strong> and <strong>users service</strong>.</p>
+<p>The gateway service act as the interface for the user. The <strong>users service</strong> used as the logic and data container for users entity.</p>
+<p><img src="https://i.imgur.com/bpqJCNY.png" alt="Simple microservice diagram" /></p>
+<h3 id="user-story">User Story</h3>
+<ul>
+<li>User can register their profile</li>
+<li>User can input their credential and get their session if the credential was right</li>
+<li>User can get their profile data</li>
+</ul>
+<h3 id="demo">Demo</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aWd4tZ94r8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>You can take a look for the source code can be seen here: https://gitlab.com/andraantariksa/simple-microservice/</p>
+<hr />
+<p>Yes, building complex applications is extremely difficult. A monolithic architecture only makes sense for simple, lightweight applications. You will end up in a world of pain if you use it for complex applications. The microservices architecture is the better choice for complex, evolving applications despite the drawbacks and implementation challenges.</p>
+<p>A lot of company like Gojek, Grab, and Tokopedia, have solved this problem by adopting microservices architecture. Instead of building a single monstrous, monolithic application, the idea is to split your application into set of smaller, interconnected services.</p>
+<hr />
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>https://github.com/vaquarkhan/vaquarkhan/wiki/Difference-between-scaling-horizontally-and-vertically</li>
+<li>http://www.antonkharenko.com/2015/06/notes-on-distributed-vs-non-distributed.html</li>
+<li>https://medium.com/codelabs-unikom/microservices-apaan-tuh-b9f5d56e8848</li>
+<li>https://www.guru99.com/microservices-tutorial.html</li>
+<li>https://martinfowler.com/articles/microservices.html</li>
+<li>https://www.ca.com/content/dam/ca/us/files/ebook/microservice-architecture-aligning-principles-practices-and-culture.pdf</li>
+<li>https://blog.cloudobjects.io/api-design/2017/04/10/api-design-paradigms/</li>
+<li>https://apisyouwonthate.com/blog/understanding-rpc-rest-and-graphql</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;programming&#x2F;">#programming</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;software&#x2F;">#software</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;engineering&#x2F;">#engineering</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;architecture&#x2F;">#architecture</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;design-pattern&#x2F;">#design pattern</a>
+                    
+                </div>
+            
+
+            blognya-andra
+            
+                <div id="disqus_thread"></div>
+                <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://blognya-andra.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;heboh-clickbaiting-di-internet&#x2F;">‹ HEBOH! CLICKBAITING DI INTERNET!</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;internationalization-i18n-and-localization-l10n&#x2F;">Internationalization (i18n) and Localization (l10n) ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;andraaa.my.id&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

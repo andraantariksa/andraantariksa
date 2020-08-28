@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Andra&#x27;s Blog - bashrc—like in Windows Command Processor</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+                  onload="renderMathInElement(document.body);"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+          
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50631312-12"></script>
+          <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-50631312-12');
+          </script>
+          
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Andra&#x27;s Blog</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;andraaa.my.id">Andra&#x27;s Blog</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/bashrc-like-in-windows/#steps" class="toc-link">Steps</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/bashrc-like-in-windows/#hide-the-command-when-starting-windows-command-processor" class="toc-link">Hide the Command When Starting Windows Command Processor</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/bashrc-like-in-windows/#verdict" class="toc-link">Verdict</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;bashrc-like-in-windows&#x2F;">bashrc—like in Windows Command Processor</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-06-21</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p><img src="https://images.unsplash.com/photo-1486837650665-9a48b09ca255?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80" alt="Snowfall in the mountains" /></p>
+<p><a href="https://unsplash.com/photos/3LNdtIlZgiw">Image by Stanislav Kondratiev</a></p>
+<hr />
+<p>One of the benefit to use bashrc-like for the <strong>Windows Command Processor</strong> or <code>cmd.exe</code> is to set an environment easily. The common way to set a new or editing environment variable and it require administrator rights which would be not very convenient if you are turning on the admin priviledges prompt.</p>
+<p><img src="https://i.imgur.com/Hlk0No2.png" alt="Setting environment variable" /></p>
+<p><em>Setting environment variable</em></p>
+<h2 id="steps">Steps</h2>
+<ul>
+<li>Run <code>regedit.exe</code> (Search it or run it through <strong>Windows Command Processor</strong>)</li>
+<li>Navigate to <code>HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor</code> path</li>
+<li>Right click on the <strong>Command Processor</strong> folder and press <strong>New</strong> -&gt; <strong>String Value</strong></li>
+<li>Set the key as <code>AutoRun</code></li>
+<li>Make a file in <code>C:\bashrc.cmd</code> or wherever you want your &quot;rc&quot; file to reside</li>
+</ul>
+<p><img src="https://i.imgur.com/HCnUV63.png" alt="Resulting image" /></p>
+<p><em>Resulting registry folder. It now have <code>AutoRun</code> key</em></p>
+<ul>
+<li>Now you can add the <strong>Windows Command Processor</strong> command processor in the autorun file you have setup</li>
+</ul>
+<p>Note that the <strong>Windows Command Processor</strong> will run and show every command in the &quot;rc&quot; file everytime you open <strong>Windows Command Processor</strong>.</p>
+<h2 id="hide-the-command-when-starting-windows-command-processor">Hide the Command When Starting Windows Command Processor</h2>
+<p>Well, you can turn off the echo before running any command and turn it on afterwards, so no command or result will be shown in the <strong>Windows Command Processor</strong>.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">@echo off
+
+# Your command
+
+@echo on
+</span></code></pre><h2 id="verdict">Verdict</h2>
+<p>There are actually a lot of alternative to make this bashrc—like in Windows Command Processor, but I think this method is the one that are close to bashrc.</p>
+<p>And maybe you want to try PowerShell which have &quot;Profile&quot; feature.</p>
+<hr />
+<p>Reference</p>
+<ul>
+<li>https://superuser.com/a/916478/917913</li>
+<li>https://ss64.com/nt/cmd.html</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;operating-system&#x2F;">#operating system</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;windows&#x2F;">#windows</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;tips&#x2F;">#tips</a>
+                    
+                </div>
+            
+
+            blognya-andra
+            
+                <div id="disqus_thread"></div>
+                <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://blognya-andra.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;algoritma-pengacakan-fisher-yates&#x2F;">‹ Algorima Pengacakan Fisher—Yates</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;run-webassembly-outside-browser-using-second-state-vm&#x2F;">Combining the Power of JavaScript and Rust by Running WebAssembly Outside Browser Using Second State VM ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;andraaa.my.id&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

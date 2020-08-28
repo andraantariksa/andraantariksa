@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Andra&#x27;s Blog - Trivial Thing That You Might Don&#x27;t Know About Conditional in Most Programming Language — Short Circuit Evaluation</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+                  onload="renderMathInElement(document.body);"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+          
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50631312-12"></script>
+          <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-50631312-12');
+          </script>
+          
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Andra&#x27;s Blog</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;andraaa.my.id">Andra&#x27;s Blog</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language/#and-operator" class="toc-link">AND operator</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language/#or-operator" class="toc-link">OR operator</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language/#the-truth" class="toc-link">The Truth</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language/#what-is-important-about-this" class="toc-link">What is Important About This?</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language/#fun-fact" class="toc-link">Fun Fact</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language/#reference" class="toc-link">Reference</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language&#x2F;">Trivial Thing That You Might Don&#x27;t Know About Conditional in Most Programming Language — Short Circuit Evaluation</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-02-20</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>When I discuss <a href="https://en.wikipedia.org/wiki/Flood_fill">flood fill</a> algorithm in computer graphics and animation course with my professor, he say something about <strong>AndAlso</strong> operator (The <strong>AND</strong> logical operator that will not evaluate right side value if the left side value is true) that only exists in Visual Basic language. The code is something like this</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">void fill(pixels, x, y, color)
+{
+    // If you call get_color on x &lt; 0, it will be out of bound error
+    // Using AndAlso, if x is less than 0, it will not execute the 
+    // `get_color` function
+    if(x &gt;= 0 AndAlso get_color(pixels, x - 1, y) != color)
+    {
+        fill(pixels, x - 1, y, color)
+    }
+    ...
+}
+</span></code></pre>
+<p>But, when I check on some website, I found something interesting, it seems that the &quot;most known&quot; <strong>AND</strong> operator is <code>AndAlso</code> and you can also use &quot;unpopular&quot; <strong>bitwise AND</strong> operator.</p>
+<p>From Wikipedia</p>
+<blockquote>
+<p>Short-circuit evaluation, minimal evaluation, or McCarthy evaluation (after John McCarthy) is the semantics of some Boolean operators in some programming languages in which the second argument is executed or evaluated only if the first argument does not suffice to determine the value of the expression: when the first argument of the AND function evaluates to false, the overall value must be false; and when the first argument of the OR function evaluates to true, the overall value must be true.</p>
+</blockquote>
+<h2 id="and-operator">AND operator</h2>
+<p>In short circuit AND operation, if left value of AND operator is <code>false</code>, then the condition will be <code>false</code> without having to evaluate the value on the right side.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">Value on the left side
+  | 
+  v
+false  &amp;&amp;  true/false  =  false
+             ^              ^
+             |              |
+Value on the right side.    |
+Not evaluated!              |
+                          No matter the value on the right side,
+                          as long as the value on the left side
+                          is false, the result will be false.
+</span></code></pre>
+<p><strong>Example</strong></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">bool left()
+{
+    printf(&quot;This is left side\n&quot;);
+    return false;
+}
+
+bool right()
+{
+    printf(&quot;This is right side\n&quot;);
+    return true; // or false, whatever you like.
+}
+
+...
+
+if (left() &amp;&amp; right())
+{
+    ...
+}
+...
+</span></code></pre>
+<p><strong>Output</strong></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">This is left side
+</span></code></pre>
+<p>But, if the left value is <code>true</code>, then the program will have to evaluate the value on the right side.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">Value on the left side
+  | 
+  v
+true  &amp;&amp;  true/false  =  true/false
+             ^               ^
+             |               |
+Value on the right side.     |
+                             |
+                          If the right side value
+                          is true, then the result
+                          will be true. Vice-versa
+</span></code></pre>
+<p>If the right side value
+is true, then the result
+will be true. Vice-versa</p>
+<h2 id="or-operator">OR operator</h2>
+<p>The short circuit applies the same rule with the AND operator, but inverted.</p>
+<p>If the left side is <code>false</code>, then it will not evaluate the expression on the right side and the condition will be <code>false</code>. But if the left side is <code>true</code>, then it will evaluate the expression on the right side as it become required to know the predicate result.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">Value on the left side
+  | 
+  v
+true  ||  true/false  =  true
+             ^             ^
+             |             |
+Value on the right side.   |
+Not evaluated!             |
+                          No matter the value on the right side,
+                          as long as the value on the left side
+                          is true, the result will be true.
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">Value on the left side
+  | 
+  v
+false  ||  true/false  =  true/false
+             ^                ^
+             |                |
+Value on the right side.      |
+                              |
+                          If the right side value
+                          is false, then the result
+                          will be false. Vice-versa
+</span></code></pre><h2 id="the-truth">The Truth</h2>
+<p>So, actually</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">#include &lt;cstdio&gt;
+
+bool is_even(int val)
+{
+    return val % 2 == 0;
+}
+
+bool is_divisible_by_3(int val)
+{
+    return val % 3 == 0;
+}
+
+int main()
+{
+    int a;
+    scanf(&quot;%d&quot;, &amp;a);
+    
+    if (is_even(a) &amp;&amp; is_divisible_by_3(a))
+    {
+            printf(&quot;Nice\n&quot;);
+    }
+}
+</span></code></pre>
+<p>is identic with</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">#include &lt;cstdio&gt;
+
+bool is_even(int val)
+{
+    return val % 2 == 0;
+}
+
+bool is_divisible_by_3(int val)
+{
+    return val % 3 == 0;
+}
+
+int main()
+{
+    int a;
+    scanf(&quot;%d&quot;, &amp;a);
+
+    if (is_even(a))
+    {
+        if(is_divisible_by_3(a))
+        {
+            printf(&quot;Nice\n&quot;);
+        }
+    }
+}
+</span></code></pre>
+<p>You can compare the generated assembly here <a href="https://godbolt.org/z/YePZ8F">https://godbolt.org/z/YePZ8F</a></p>
+<h2 id="what-is-important-about-this">What is Important About This?</h2>
+<p>It will be very fatal if you have a required side effect (e.g write a log) from both left and right value when you are <strong>using short circuit operator</strong> or if are <strong>not using short circuit operator</strong> when the evaluation of right side value is depends on the left side value</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">array = [1, 2, 3];
+index = 10;
+// Will be error without short circuit
+if(out_of_bounds(array, index) &amp; is_even(array[index]))
+{
+    ...
+}
+</span></code></pre><h2 id="fun-fact">Fun Fact</h2>
+<p>Edsger W. Dijkstra criticized the short circuit operator</p>
+<blockquote>
+<p>The conditional connectives — &quot;cand&quot; and &quot;cor&quot; for short — are ... less innocent than they might seem at first sight. For instance, cor does not distribute over cand: compare</p>
+<p>(A cand B) cor C with (A cor C) cand (B cor C);</p>
+<p>in the case ¬A ∧ C , the second expression requires B to be defined, the first one does not. Because the conditional connectives thus complicate the formal reasoning about programs, they are better avoided.</p>
+</blockquote>
+<p><a href="http://www.cs.utexas.edu/users/EWD/ewd10xx/EWD1009.PDF">http://www.cs.utexas.edu/users/EWD/ewd10xx/EWD1009.PDF</a></p>
+<hr />
+<p>Checkout <a href="https://rosettacode.org/wiki/Short-circuit_evaluation">Short-circuit evaluation - Rosetta Code</a> to see the list of programming language that supports short-circuit evaluation. </p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">https://en.wikipedia.org/wiki/Short-circuit_evaluation</a></li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;programming&#x2F;">#programming</a>
+                    
+                </div>
+            
+
+            blognya-andra
+            
+                <div id="disqus_thread"></div>
+                <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://blognya-andra.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;internationalization-i18n-and-localization-l10n&#x2F;">‹ Internationalization (i18n) and Localization (l10n)</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;sign-extension&#x2F;">Sign Extension ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;andraaa.my.id&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Andra&#x27;s Blog - Internationalization (i18n) and Localization (l10n)</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+                  onload="renderMathInElement(document.body);"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+          
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50631312-12"></script>
+          <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-50631312-12');
+          </script>
+          
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Andra&#x27;s Blog</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;andraaa.my.id">Andra&#x27;s Blog</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/internationalization-i18n-and-localization-l10n/#what-is-it" class="toc-link">What is it?</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://andraaa.my.id/blog/internationalization-i18n-and-localization-l10n/#internationalization" class="toc-link">Internationalization</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://andraaa.my.id/blog/internationalization-i18n-and-localization-l10n/#localization" class="toc-link">Localization</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/internationalization-i18n-and-localization-l10n/#why-it-s-important" class="toc-link">Why It&#x27;s Important</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://andraaa.my.id/blog/internationalization-i18n-and-localization-l10n/#further-reading" class="toc-link">Further Reading</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;internationalization-i18n-and-localization-l10n&#x2F;">Internationalization (i18n) and Localization (l10n)</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-11-17</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Well, I just know something that I have read it a lot but I don't know the meaning, <strong>i18</strong> (Internationalization) and <strong>l10n</strong> (Localization). The abbreviation is pretty cryptic for me. For now, I'm going to explain what I have learn something from this abbreviation.</p>
+<ul>
+<li>i18n = <strong>I</strong>nternationalizatio<strong>n</strong>: i, then 18 letters, then n</li>
+<li>l10n = <strong>L</strong>ocalizatio<strong>n</strong>: l, then 10 letters, then n</li>
+</ul>
+<h2 id="what-is-it">What is it?</h2>
+<h3 id="internationalization">Internationalization</h3>
+<p>Internationalization is a process to make a product or an application &quot;international&quot;; that is to support any language or local configuration. It usually needs the developer to change something in the product or application.</p>
+<h4 id="example">Example</h4>
+<p>The internationalization approach adopted by McDonald’s is in line with the company’s franchising approach to expansion.</p>
+<p>In software development, the internationalization approached by providing some configuration to support characters or font, to define a timezone, unit, and the other things.</p>
+<p>Ubuntu provide an interface for translator to localize the Ubuntu program interface — <a href="https://translations.launchpad.net/ubuntu">Translations: Ubuntu</a>.</p>
+<h3 id="localization">Localization</h3>
+<p>Localization is a process to make a product or and application &quot;localized&quot;; that is, work for a given local and concrete context, adapted to the user. Localization only needs to fill the <em>container</em> that has been created from internationalization process. Localization process are not involving the developer (except in some cases).</p>
+<h4 id="example-1">Example</h4>
+<p>You can think on McDonalds in (most of) Asia, they had rice to localize their menu with local food.</p>
+<p>While in software development, there's translator that can do translation, adjustment, and the other things to localize the application.</p>
+<p>You can help to translate Ubuntu program interface to Indonesian — <a href="https://translations.launchpad.net/ubuntu/bionic/+lang/id">Indonesian (id) : Bionic (18.04) : Translations : Ubuntu</a>.</p>
+<h2 id="why-it-s-important">Why It's Important</h2>
+<p><img src="https://miro.medium.com/max/3507/1*Sp3eqPuXRBTBon-WhuGMcA.jpeg" alt="Internationalization &amp; Localization — UX Knowledge Base Sketch #67" /></p>
+<p><a href="https://medium.com/@tigran.baseyan/ux-knowledge-base-sketches-67-%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D1%85-%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA-%D1%87%D0%B0%D1%81%D1%82%D1%8C-3-45b001505277">Internationalization &amp; Localization — UX Knowledge Base Sketch #67</a></p>
+<p>As a good developer, internationalization and localization is an important things. Especially when you want to ship your product or application to global world. Not everyone are able to speak on particular language or using particular unit of measurement.</p>
+<p>With internationalization, localization will be more easy. And with localization, your product will be recognized easily by local people.</p>
+<hr />
+<h2 id="further-reading">Further Reading</h2>
+<p>https://wiki.mageia.org/en/What_is_i18n,_what_is_l10n
+https://ivypanda.com/essays/international-business-mcdonalds/
+https://blog.mozilla.org/l10n/2011/12/14/i18n-vs-l10n-whats-the-diff/
+https://www.w3.org/International/questions/qa-i18n</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;development&#x2F;">#development</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;business&#x2F;">#business</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;internationalization&#x2F;">#internationalization</a>
+                    
+                        <a href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;tags&#x2F;localization&#x2F;">#localization</a>
+                    
+                </div>
+            
+
+            blognya-andra
+            
+                <div id="disqus_thread"></div>
+                <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://blognya-andra.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;microservice-architecture&#x2F;">‹ Microservice Architecture</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;andraaa.my.id&#x2F;blog&#x2F;trivial-thing-that-you-might-dont-know-about-conditional-in-most-programming-language&#x2F;">Trivial Thing That You Might Don&#x27;t Know About Conditional in Most Programming Language — Short Circuit Evaluation ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;andraaa.my.id&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
