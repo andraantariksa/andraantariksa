@@ -208,7 +208,7 @@ Here is the preview of the web.
 
 JavaScript may be quite powerful to use in web apps, but it has it's own limitation. To overcome those limitation, we move out the performance critical subroutine code from JavaScript into Rust, compile the Rust code to WebAssembly and integrate the WebAssembly with JavaScript.
 
---
+---
 
 If you have any further question, let me know in the comments below.
 
@@ -216,7 +216,7 @@ If you have any further question, let me know in the comments below.
 
 The projects source code are available for public [https://github.com/andraantariksa/Anime4k-ssvm-nodejs](https://github.com/andraantariksa/Anime4k-ssvm-nodejs) and also the live demo [http://anime4k-ssvm-nodejs.herokuapp.com/](http://anime4k-ssvm-nodejs.herokuapp.com/)
 
---
+---
 
 Reference
 
