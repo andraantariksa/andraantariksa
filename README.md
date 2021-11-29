@@ -1,18 +1,5 @@
-# Next Markdown Blog
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=andraantariksa&show_icons=true&hide_rank=true">
 
-Simple static blog using markdown and Next.js
+#### Hello there 👋! Thank you for visiting my profile
 
-[DEMO](https://next-markdown-blog-drab.vercel.app/)
-
-## Usage
-
-```bash
-# Install dependencies
-npm install
-
-# Run dev server
-npm run dev
-
-# Build for prod and export static website
-npm run build
-```
+If you have any question or you would like to have a chat with me, feel free to reach me on email, Twitter, or [LinkedIn](https://www.linkedin.com/in/andraantariksa/).

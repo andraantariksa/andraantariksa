@@ -1,16 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import Head from "next/head";
 import Image from "next/image";
-import Post from "../components/Post";
-import { sortByDate } from "../utils";
 
 export default function Home({ posts }) {
   return (
     <>
       <Head>
-        <title>Andra's Blog</title>
+        <title>{"Andra's Blog"}</title>
       </Head>
 
       <main>
