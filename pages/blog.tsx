@@ -30,7 +30,7 @@ export default function Home({ posts }) {
 
       <div className="flex justify-center">
         <div className="max-w-screen-md my-5 mx-4 md:mx-0">
-          {posts.map((post, index) => (
+          {posts.filter((post) => post.frontmatter?.is_published !== false).map((post, index) => (
             <Post key={index} post={post} />
           ))}
         </div>

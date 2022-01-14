@@ -5,12 +5,17 @@ import marked from "marked";
 import Link from "next/link";
 import { DiscussionEmbed } from "disqus-react";
 import Head from "next/head";
+import Error from "next/error";
 
 export default function PostPage({
-  frontmatter: { title, date, cover_image },
+  frontmatter: { title, date, cover_image, is_published = true },
   slug,
   content,
 }) {
+  if (!is_published) {
+    return <Error statusCode={404} />;
+  }
+
   return (
     <>
       <Head>
