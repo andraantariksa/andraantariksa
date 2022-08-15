@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Head from "next/head";
-import { sortByDate } from "../utils";
+import { sortByDate } from "../src/utils";
 import Link from "next/link";
 
 const Post = ({ post }) => {
@@ -30,9 +30,11 @@ export default function Home({ posts }) {
 
       <div className="flex justify-center">
         <div className="max-w-screen-md my-5 mx-4 md:mx-0">
-          {posts.filter((post) => post.frontmatter?.is_published !== false).map((post, index) => (
-            <Post key={index} post={post} />
-          ))}
+          {posts
+            .filter((post) => post.frontmatter?.is_published !== false)
+            .map((post, index) => (
+              <Post key={index} post={post} />
+            ))}
         </div>
       </div>
     </>
