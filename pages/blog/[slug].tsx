@@ -7,11 +7,24 @@ import { DiscussionEmbed } from "disqus-react";
 import Head from "next/head";
 import Error from "next/error";
 
+export type PostDetailData = {
+  date: string;
+  cover_image?: string;
+  title: string;
+  is_published?: boolean;
+};
+
+export type PostDetail = {
+  slug: string;
+  data: PostDetailData;
+  content: string;
+};
+
 export default function PostPage({
-  frontmatter: { title, date, cover_image, is_published = true },
+  data: { title, date, cover_image, is_published = true },
   slug,
   content,
-}) {
+}: PostDetail) {
   if (!is_published) {
     return <Error statusCode={404} />;
   }
@@ -69,13 +82,13 @@ export async function getStaticProps({ params: { slug } }) {
     "utf-8"
   );
 
-  const { data: frontmatter, content } = matter(markdownWithMeta);
+  const { data, content } = matter(markdownWithMeta);
 
   return {
     props: {
-      frontmatter,
+      data,
       slug,
       content,
-    },
+    } as PostDetail,
   };
 }

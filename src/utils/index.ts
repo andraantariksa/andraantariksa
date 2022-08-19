@@ -1,3 +1,5 @@
-export const sortByDate = (a, b) => {
-  return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-}
+import { PostOverview } from "../../pages/blog";
+
+export const sortByDate = (a: PostOverview, b: PostOverview) => {
+  return Date.parse(b.data.date) - Date.parse(a.data.date);
+};
