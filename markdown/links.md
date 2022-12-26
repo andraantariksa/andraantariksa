@@ -1,0 +1,5 @@
+## Web
+
+### Frontend
+
+- [Lazy Loading Images – The Complete Guide](https://imagekit.io/blog/lazy-loading-images-complete-guide/)
