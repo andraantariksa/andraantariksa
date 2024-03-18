@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+import profilePicture from "../public/images/profile.jpg";
 
-export default function Home({ posts }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -11,7 +12,8 @@ export default function Home({ posts }) {
       <main>
         <div className="flex flex-col items-center my-7">
           <Image
-            src="/assets/images/avatar.png"
+            src={profilePicture}
+            alt="Andra Antariksa profile"
             width={200}
             height={200}
             className="rounded-full"
@@ -28,12 +30,12 @@ export default function Home({ posts }) {
           </a>
           <p className="mb-2 w-96 text-center">
             {"You can call me Andra. I'm working as fullstack web and mobile developer at **Stamps Indonesia**. " +
-              " On my free time, I'm working on graphics and mobile app about computer graphics with my friends "}
-            <a className="text-blue-600" href="https://github.com/shaderboi">
-              {"@shaderboi"}
+              " On my free time, I'm working on solving fun problem with my friends in "}
+            <a className="text-blue-600" href="https://github.com/gadostudio">
+              {"@gadostudio"}
             </a>
             {
-              " research group. I code in Typescript, Python, Kotlin, C++ and Rust."
+              ". I code in Typescript, Python, Kotlin, C++ and Rust."
             }
           </p>
           <p className="mb-2 w-96 text-center">

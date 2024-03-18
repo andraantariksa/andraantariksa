@@ -22,7 +22,7 @@ const Post = ({ post }) => {
         <h3 className="text-xl">{post.data.title}</h3>
         <div className="">Posted on {post.data.date}</div>
         <p>{post.data.excerpt}</p>
-        <a className="mt-10">Read More</a>
+        <p className="mt-10">Read More</p>
       </div>
     </Link>
   );
