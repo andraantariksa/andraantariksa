@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { IoLogoLinkedin } from "@react-icons/all-files/io5/IoLogoLinkedin";
 import { IoLogoGithub } from "@react-icons/all-files/io5/IoLogoGithub";
@@ -5,7 +7,7 @@ import { IoClose } from "@react-icons/all-files/io5/IoClose";
 import { IoMenu } from "@react-icons/all-files/io5/IoMenu";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { useRouter } from "next/router";
+import { usePathname  } from "next/navigation";
 
 const navigation = [
   { name: "About Me", href: "/" },
@@ -17,7 +19,7 @@ function classNames(...classes: Array<string>) {
 }
 
 export const Header = () => {
-  const { basePath, pathname, route } = useRouter();
+  const pathname = usePathname();
 
   return (
     <header>
@@ -58,13 +60,13 @@ export const Header = () => {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.href === route
+                            item.href === pathname
                               ? "bg-gray-900 text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white",
                             "px-3 py-2 rounded-md text-sm font-medium"
                           )}
                           aria-current={
-                            item.href === route ? "page" : undefined
+                            item.href === pathname ? "page" : undefined
                           }
                         >
                           {item.name}
@@ -164,12 +166,12 @@ export const Header = () => {
                     as="a"
                     href={item.href}
                     className={classNames(
-                      item.href === route
+                      item.href === pathname
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "block px-3 py-2 rounded-md text-base font-medium"
                     )}
-                    aria-current={item.href === route ? "page" : undefined}
+                    aria-current={item.href === pathname ? "page" : undefined}
                   >
                     {item.name}
                   </Disclosure.Button>
