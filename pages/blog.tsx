@@ -37,7 +37,7 @@ export default function Home({ posts }: HomeProps) {
   );
 }
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const fileNames = await fs.readdir(path.join("markdown/posts"));
   const postsProms = fileNames.map(async (fileName) => {
     const slug = fileName.replace(".md", "");
