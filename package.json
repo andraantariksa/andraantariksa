@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,6 +13,7 @@
     "@react-icons/all-files": "^4.1.0",
     "@types/node": "^16.11.10",
     "@types/react": "^17.0.37",
+    "@types/styled-components": "^5.1.34",
     "autoprefixer": "^10.4.0",
     "disqus-react": "1.1.5",
     "eslint": "7.29.0",
@@ -21,9 +22,10 @@
     "marked": "12.0.1",
     "next": "^14.1.3",
     "postcss": "8.4.36",
-    "prettier": "^2.5.0",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.5.2"
   }
