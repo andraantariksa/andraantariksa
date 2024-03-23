@@ -20,7 +20,7 @@ export default function Home() {
           />
           <h2 className="text-4xl mt-1">{"Andra Antariksa Prihadi"}</h2>
           <h3 className="text-2xl mt-1">
-            {"Software Engineer - System Engineer"}
+            {"Software Engineer - Mobile Engineer"}
           </h3>
           <a
             className="bg-indigo-900 rounded-xl text-white px-3 py-2 my-3"

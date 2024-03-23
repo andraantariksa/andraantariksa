@@ -1,8 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import marked from "marked";
-import Link from "next/link";
+import { marked } from "marked";
 import { DiscussionEmbed } from "disqus-react";
 import Head from "next/head";
 import Error from "next/error";
@@ -29,6 +28,7 @@ export default function PostPage({
     return <Error statusCode={404} />;
   }
 
+  // @ts-ignore
   return (
     <>
       <Head>
@@ -42,10 +42,11 @@ export default function PostPage({
             {cover_image && <img src={cover_image} alt="" />}
             <div
               className="mt-1"
-              dangerouslySetInnerHTML={{ __html: marked(content) }}
+              dangerouslySetInnerHTML={{ __html: marked.parse(content) as string }}
             />
           </div>
           <div className="mt-5">
+            {/* @ts-ignore */}
             <DiscussionEmbed
               shortname="blognya-andra"
               config={{
