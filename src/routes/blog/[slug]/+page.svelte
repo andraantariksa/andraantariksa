@@ -11,11 +11,13 @@
         var disqus_config = function () {
             this.page.identifier = `blog/${data.post.slug}`;
         };
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://blognya-andra.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', new Date().toString());
-        (d.head || d.body).appendChild(s);
+        (function () {
+            // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement("script");
+            s.src = "https://blognya-andra.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", new Date().toString());
+            (d.head || d.body).appendChild(s);
         })();
     });
 </script>
@@ -35,7 +37,12 @@
     </div>
     <div class="comments">
         <div id="disqus_thread"></div>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript
+            >Please enable JavaScript to view the <a
+                href="https://disqus.com/?ref_noscript"
+                >comments powered by Disqus.</a
+            ></noscript
+        >
     </div>
 </article>
 
@@ -54,6 +61,7 @@
 
     .content {
         max-width: 500px;
+        padding: 0px 16px;
         display: flex;
         flex-direction: column;
     }
@@ -64,8 +72,8 @@
         gap: 12px;
 
         :global(pre) {
-            background: #2B2723;
-            color: #FFFFFF;
+            background: #2b2723;
+            color: #ffffff;
             padding: 8px;
             border-radius: 8px;
         }
@@ -79,7 +87,7 @@
             font-size: 16px;
             font-weight: bold;
         }
-        
+
         :global(h3) {
             font-size: 14px;
             font-weight: bold;
