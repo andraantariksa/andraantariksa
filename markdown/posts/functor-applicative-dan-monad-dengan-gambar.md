@@ -3,7 +3,7 @@ title: "Functor, Applicative, dan Monad dengan Gambar"
 date: "2020-03-12"
 ---
 
-Ada sebuan nilai (*value*) dasar:
+Ada sebuan nilai (_value_) dasar:
 
 ![](http://adit.io/imgs/functors/value.png)
 
@@ -15,7 +15,7 @@ Cukup mudah. Mari kita perdalam hal ini dengan menganggap bahwa suatu nilai dapa
 
 ![](http://adit.io/imgs/functors/value_and_context.png)
 
-Sekarang, ketika Anda mengaplikasikan suatu fungsi kepada nilai tersebut, Anda akan mendapatkan hasil yang berbeda bergantung dengan konteks yang ada. Ide ini merupakan awal mula munculnya *Funtor*, *Applicative*, *Monad*, *Arrow*, dan lainnya. Salah satunya tipe data Maybe yang memiliki dua konteks yang saling berhubungan:
+Sekarang, ketika Anda mengaplikasikan suatu fungsi kepada nilai tersebut, Anda akan mendapatkan hasil yang berbeda bergantung dengan konteks yang ada. Ide ini merupakan awal mula munculnya _Funtor_, _Applicative_, _Monad_, _Arrow_, dan lainnya. Salah satunya tipe data Maybe yang memiliki dua konteks yang saling berhubungan:
 
 ![](http://adit.io/imgs/functors/context.png)
 
@@ -42,11 +42,11 @@ Bam! fmap menunjukan kita hasilnya! Tapi bagaimana `fmap` tahu cara mengaplikasi
 
 ## Sebenarnya, apa sih Functor itu?
 
-*Functor* merupakan suatu *typeclass*. Di bawah ini merupakan definisi dari *Functor*:
+_Functor_ merupakan suatu _typeclass_. Di bawah ini merupakan definisi dari _Functor_:
 
 ![](http://adit.io/imgs/functors/functor_def.png)
 
-*Functor* adalah suatu tipe data yang mendefinisikan bagaimana `fmap` mengaplikasikan tipe data tersebut. Ini bagaimana cara `fmap` bekerja:
+_Functor_ adalah suatu tipe data yang mendefinisikan bagaimana `fmap` mengaplikasikan tipe data tersebut. Ini bagaimana cara `fmap` bekerja:
 
 ![](http://adit.io/imgs/functors/fmap_def.png)
 
@@ -57,7 +57,7 @@ Jadi kita bisa melakukan ini:
 Just 5
 ```
 
-Dan `fmap` secara ajaib mengaplikasikan fungsi tersebut, karena `Maybe` merupakan *Functor*. *Functor* mendefinisikan bagaimana `fmap` dapat berlaku pada `Just` dan `Nothing`:
+Dan `fmap` secara ajaib mengaplikasikan fungsi tersebut, karena `Maybe` merupakan _Functor_. _Functor_ mendefinisikan bagaimana `fmap` dapat berlaku pada `Just` dan `Nothing`:
 
 ```
 instance Functor Maybe where
@@ -80,7 +80,7 @@ Nothing
 
 ![Bill O'Reilly being totally ignorant about the Maybe functor](http://adit.io/imgs/functors/bill.png)
 
-Seperti Morpheus di film Matrix, `fmap` tahu apa yang harus ia lakukan; pada awalnya anda memulai dengan `Nothing`, dan anda berakhir dengan `Nothing`! Sekarang semua menjadi masuk akal, mengapa ada tipe data `Maybe`. Sebagai contoh, ini bagaimana Anda bekerja dengan *database* di bahasa pemrograman yang tidak memiliki sintaks `Maybe`:
+Seperti Morpheus di film Matrix, `fmap` tahu apa yang harus ia lakukan; pada awalnya anda memulai dengan `Nothing`, dan anda berakhir dengan `Nothing`! Sekarang semua menjadi masuk akal, mengapa ada tipe data `Maybe`. Sebagai contoh, ini bagaimana Anda bekerja dengan _database_ di bahasa pemrograman yang tidak memiliki sintaks `Maybe`:
 
 ```
 post = Post.find_by_id(1)
@@ -107,7 +107,7 @@ Contoh lain: apa yang terjadi ketika Anda mengaplikasikan fungsi ke list?
 
 ![](http://adit.io/imgs/functors/fmap_list.png)
 
-List ternyata merupakan *functor* juga! Di bawah ini merupakan definisi *Functor* dari list
+List ternyata merupakan _functor_ juga! Di bawah ini merupakan definisi _Functor_ dari list
 
 ```
 instance Functor [] where
@@ -148,7 +148,7 @@ Ketika Anda menggunakan `fmap` pada sebuah fungsi, itu sama saja dengan melakuka
 
 ## Applicative
 
-*Applicative* membuat semuanya menjadi lebih menarik. Mirip seperti Functor, nilai yang dibuat yang terbungkus oleh konteks
+_Applicative_ membuat semuanya menjadi lebih menarik. Mirip seperti Functor, nilai yang dibuat yang terbungkus oleh konteks
 
 ![](http://adit.io/imgs/functors/value_and_context.png)
 
@@ -175,7 +175,7 @@ Just (+3) <*> Just 2 == Just 5
 
 ![](http://adit.io/imgs/functors/applicative_list.png)
 
-Ada beberapa hal yang dapat *Applicative* lakukan dan tidak dapat dilakukan oleh *Functor*. Bagaimana caranya mengaplikasikan fungsi yang memiliki dua argumen ke dua nilai yang terbungkus
+Ada beberapa hal yang dapat _Applicative_ lakukan dan tidak dapat dilakukan oleh _Functor_. Bagaimana caranya mengaplikasikan fungsi yang memiliki dua argumen ke dua nilai yang terbungkus
 
 Here's something you can do with Applicatives that you can't do with Functors. How do you apply a function that takes two arguments to two wrapped values?
 
@@ -186,7 +186,7 @@ Just (+5)
 ERROR ??? MENGAPA ???
 ```
 
-*Applicative*:
+_Applicative_:
 
 ```
 > (+) <$> (Just 5)
@@ -195,7 +195,7 @@ Just (+5)
 Just 8
 ```
 
-*Applicative* mengalahkan *Functor* dalam hal ini. "Pria besar bisa menggunakan fungsi dengan berapapun jumlah argumennya", katanya *Applicative*. "Dengan `<$>` dan `<*>`, aku bisa menggunakan fungsi yang membutuhkan nilai yang terbungkus. Dan aku bisa mengaplikasikan semua nilainya, dan aku akan mendapatkan nilainya terbungkus kembali! HAHAHAHA!"
+_Applicative_ mengalahkan _Functor_ dalam hal ini. "Pria besar bisa menggunakan fungsi dengan berapapun jumlah argumennya", katanya _Applicative_. "Dengan `<$>` dan `<*>`, aku bisa menggunakan fungsi yang membutuhkan nilai yang terbungkus. Dan aku bisa mengaplikasikan semua nilainya, dan aku akan mendapatkan nilainya terbungkus kembali! HAHAHAHA!"
 
 ```
 > (*) <$> Just 5 <*> Just 3
@@ -211,22 +211,22 @@ Just 15
 
 ## Monad
 
-Langkah-langkah memahami *Monad*:
+Langkah-langkah memahami _Monad_:
 
 - Punya gelar S3 di bidang ilmu komputer.
-- Buang gelar itu, karena Anda tidak memerlukan itu untuk memahami *Monad*!
+- Buang gelar itu, karena Anda tidak memerlukan itu untuk memahami _Monad_!
 
-*Monad* membuat semuanya menjadi lebih menarik.
+_Monad_ membuat semuanya menjadi lebih menarik.
 
-*Functor* mengaplikasikan fungsi ke nilai yang terbungkus:
+_Functor_ mengaplikasikan fungsi ke nilai yang terbungkus:
 
 ![](http://adit.io/imgs/functors/fmap.png)
 
-*Applicative* mengaplikasikan fungsi yang terbungkus ke nilai yang terbungkus:
+_Applicative_ mengaplikasikan fungsi yang terbungkus ke nilai yang terbungkus:
 
 ![](http://adit.io/imgs/functors/applicative.png)
 
-Monad mengaplikasikan fungsi yang mengembalikan nilai yang terbungkus ke nilai yang terbungkus. *Monad* memiliki fungsi `>>=` (Baca: *bind*) untuk melakukan hal tersebut.
+Monad mengaplikasikan fungsi yang mengembalikan nilai yang terbungkus ke nilai yang terbungkus. _Monad_ memiliki fungsi `>>=` (Baca: _bind_) untuk melakukan hal tersebut.
 
 Mari kita lihat contohnya. `Maybe` merupakan Monad:
 
@@ -261,7 +261,7 @@ Just 2
 Nothing
 ```
 
-Apa yang terjadi sebenarnya? *Monad* adalah *typeclass* lain. Di bawah ini merupakan sebagian definisi dari *Monad*:
+Apa yang terjadi sebenarnya? _Monad_ adalah _typeclass_ lain. Di bawah ini merupakan sebagian definisi dari _Monad_:
 
 ```
 class Monad m where
@@ -297,8 +297,8 @@ Nothing
 
 ![](http://adit.io/imgs/functors/monad_chain.png)
 
-Keren! Sekarang kita tahu kalau `Maybe` merupakan *Functor*, *Applicative*, dan juga *Monad*.
-Sekarang mari kita membahas contoh lainnya: *Monad* `IO`:
+Keren! Sekarang kita tahu kalau `Maybe` merupakan _Functor_, _Applicative_, dan juga _Monad_.
+Sekarang mari kita membahas contoh lainnya: _Monad_ `IO`:
 
 ![](http://adit.io/imgs/functors/io.png)
 
@@ -334,9 +334,9 @@ Ketiga fungsi di atas menerima nilai biasa (atau tidak) dan mengembalikan nilai 
 getLine >>= readFile >>= putStrLn
 ```
 
-Mantap! Ajegile *Monad*!
+Mantap! Ajegile _Monad_!
 
-Haskell juga menyediakan kita dengan *syntatic sugar* untuk *Monad*, namanya notasi `do`:
+Haskell juga menyediakan kita dengan _syntatic sugar_ untuk _Monad_, namanya notasi `do`:
 
 ```
 foo = do
@@ -347,18 +347,18 @@ foo = do
 
 ## Kesimpulan
 
-1. *Functor* merupakan tipe data yang mengimplementasikan *typeclass* *Functor*.
-2. *Applicative* merupakan tipe data yang mengimplementasikan *typeclass* *Applicative*.
-3. *Monad* merupakan tipe data yang mengimplementasikan *typeclass* *Monad*.
-4. *Maybe* mengimplementasikan ketiga-tiganya, jadi *Maybe* adalah *Functor*, *Applicative*, sekaligus *Monad*.
+1. _Functor_ merupakan tipe data yang mengimplementasikan _typeclass_ _Functor_.
+2. _Applicative_ merupakan tipe data yang mengimplementasikan _typeclass_ _Applicative_.
+3. _Monad_ merupakan tipe data yang mengimplementasikan _typeclass_ _Monad_.
+4. _Maybe_ mengimplementasikan ketiga-tiganya, jadi _Maybe_ adalah _Functor_, _Applicative_, sekaligus _Monad_.
 
 Apa perbedaan diantara ketiga-tiganya?
 
 ![](http://adit.io/imgs/functors/recap.png)
 
-*functors*: anda mengaplikasikan fungsi ke data yang terbungkus menggunakan `fmap` atau `<$>`
-*applicatives*: anda mengaplikasikan fungsi yang terbungkus ke data yang terbungkus menggunakan `<$>` atau `liftA`
-*monads*: anda mengaplikasikan fungsi yang mengembalikan nilai yang terbungkus dengan nilai yang terbungkus menggunakan `>>=` atau `liftM`
+_functors_: anda mengaplikasikan fungsi ke data yang terbungkus menggunakan `fmap` atau `<$>`
+_applicatives_: anda mengaplikasikan fungsi yang terbungkus ke data yang terbungkus menggunakan `<$>` atau `liftA`
+_monads_: anda mengaplikasikan fungsi yang mengembalikan nilai yang terbungkus dengan nilai yang terbungkus menggunakan `>>=` atau `liftM`
 
 ---
 
