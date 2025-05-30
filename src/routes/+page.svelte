@@ -31,7 +31,7 @@
 
     .content {
         max-width: 500px;
-        padding: 0px 16px;
+        padding: 64px 16px 128px 16px;
     }
 
     .heading1 {

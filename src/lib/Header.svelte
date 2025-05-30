@@ -7,6 +7,7 @@
         <ul class="menu__item">
             <li><a href="/">About Me</a></li>
             <li><a href="/blog">Blog</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
         <h2 class="menu__item center"><a href="/">Andra Antariksa</a></h2>
@@ -27,7 +28,7 @@
             </li>
         </ul>
     </div>
-    
+
     <div class="menu mobile-only">
         <ul class="menu__item">
             <button class="hamburger" on:click={() => (opened = !opened)}>
@@ -50,21 +51,58 @@
                         <div class="cross__line cross__line-v"></div>
                     </button>
                 </ul>
-                <h2 class="menu__item center"><a href="/">Andra Antariksa</a></h2>
+                <h2 class="menu__item center">
+                    <a href="/">Andra Antariksa</a>
+                </h2>
                 <div class="menu__item"></div>
             </div>
-            <ul class="list">
-                <li><a href="/" on:click={() => (opened = false)}>About Me</a></li>
-                <li><a href="/blog" on:click={() => (opened = false)}>Blog</a></li>
-                <li><a href="/contact" on:click={() => (opened = false)}>Contact</a></li>
-            </ul>
+            <div class="content">
+                <ul class="list">
+                    <li>
+                        <a href="/" on:click={() => (opened = false)}
+                            >About Me</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/blog" on:click={() => (opened = false)}
+                            >Blog</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/portfolio" on:click={() => (opened = false)}
+                            >Portfolio</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/contact" on:click={() => (opened = false)}
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+                <ul class="socials">
+                    <li>
+                        <a
+                            href="https://github.com/andraantariksa"
+                            class="icon--github"
+                            aria-label="GitHub"
+                        ></a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://linkedin.com/in/andraantariksa"
+                            class="icon--linkedin"
+                            aria-label="GitHub"
+                        ></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 {/if}
 
 <style>
     /* Mobile */
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 700px) {
         .desktop-only {
             display: none !important;
         }
@@ -75,7 +113,7 @@
     }
 
     /* Desktop */
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 700px) {
         .mobile-only {
             display: none !important;
         }
@@ -102,16 +140,22 @@
             display: flex;
             flex-direction: column;
 
-            .list {
+            .content {
+                padding: 20px 40px;
                 display: flex;
+                gap: 24px;
                 flex-direction: column;
-                list-style: none;
-                gap: 8px;
-                padding: 16px 40px;
 
-                li {
-                    font-size: 20px;
-                    line-height: 1;
+                .list {
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;
+                    gap: 16px;
+
+                    li {
+                        font-size: 20px;
+                        line-height: 1;
+                    }
                 }
             }
         }
@@ -131,6 +175,7 @@
     }
 
     .cross {
+        background: transparent;
         position: relative;
         width: 24px;
         height: 24px;
@@ -148,7 +193,7 @@
         .cross__line-h {
             transform: translate(-50%, -50%) rotate(45deg);
         }
-        
+
         .cross__line-v {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
