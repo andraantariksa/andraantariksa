@@ -1,38 +1,10 @@
-# sv
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=andraantariksa&show_icons=true&hide_rank=true">
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Hello there 👋! Feel free to reach me out on SNS or email.
 
-## Creating a project
+You can see my other creative works in
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Codepen](https://codepen.io/andraantariksa/)
+- [Shadertoy](https://www.shadertoy.com/user/andraantariksa)
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+![Hit stats](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fandraantariksa%2Fandraantariksa&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)
