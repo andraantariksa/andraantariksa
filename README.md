@@ -7,4 +7,4 @@ You can see my other creative works in
 - [Codepen](https://codepen.io/andraantariksa/)
 - [Shadertoy](https://www.shadertoy.com/user/andraantariksa)
 
-![Hit stats](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fandraantariksa%2Fandraantariksa&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)
+![Hit stats](https://counter1.optistats.ovh/private/freecounterstat.php?c=hss8517tnz38guta6wy72aujxf3upnxn)
