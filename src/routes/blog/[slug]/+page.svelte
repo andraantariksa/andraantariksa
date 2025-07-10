@@ -71,6 +71,10 @@
         flex-direction: column;
         gap: 12px;
 
+        :global(img) {
+            max-width: 100%;
+        }
+
         :global(pre) {
             background: #2b2723;
             color: #ffffff;
