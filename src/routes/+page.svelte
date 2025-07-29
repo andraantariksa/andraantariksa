@@ -8,7 +8,7 @@
     <h2 class="heading1">
         Andra Antariksa <small class="small">(lit mean: Space)</small>
     </h2>
-    <h3 class="heading2">宇宙見 安藤</h3>
+    <h3 class="heading2">安藤空太</h3>
     <div class="paragraphs">
         <p class="paragraph">
             I love wandering around city and country by walking, running, public
