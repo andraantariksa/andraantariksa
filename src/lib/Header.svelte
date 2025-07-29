@@ -7,6 +7,7 @@
         <ul class="menu__item">
             <li><a href="/">About Me</a></li>
             <li><a href="/blog">Blog</a></li>
+            <li><a href="/links">Links</a></li>
             <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
@@ -66,6 +67,11 @@
                     <li>
                         <a href="/blog" on:click={() => (opened = false)}
                             >Blog</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/links" on:click={() => (opened = false)}
+                            >Links</a
                         >
                     </li>
                     <li>
