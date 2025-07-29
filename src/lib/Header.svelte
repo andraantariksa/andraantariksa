@@ -7,6 +7,7 @@
         <ul class="menu__item">
             <li><a href="/">About Me</a></li>
             <li><a href="/blog">Blog</a></li>
+            <li><a href="/links">Links</a></li>
             <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
@@ -31,7 +32,7 @@
 
     <div class="menu mobile-only">
         <ul class="menu__item">
-            <button class="hamburger" on:click={() => (opened = !opened)}>
+            <button class="hamburger" on:click={() => (opened = !opened)} aria-label="Open menu">
                 <div class="hamburger__line"></div>
                 <div class="hamburger__line"></div>
             </button>
@@ -46,7 +47,7 @@
         <div class="main">
             <div class="menu">
                 <ul class="menu__item">
-                    <button class="cross" on:click={() => (opened = !opened)}>
+                    <button class="cross" on:click={() => (opened = !opened)} aria-label="Close menu">
                         <div class="cross__line cross__line-h"></div>
                         <div class="cross__line cross__line-v"></div>
                     </button>
@@ -66,6 +67,11 @@
                     <li>
                         <a href="/blog" on:click={() => (opened = false)}
                             >Blog</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/links" on:click={() => (opened = false)}
+                            >Links</a
                         >
                     </li>
                     <li>
