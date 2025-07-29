@@ -32,7 +32,7 @@
 
     <div class="menu mobile-only">
         <ul class="menu__item">
-            <button class="hamburger" on:click={() => (opened = !opened)}>
+            <button class="hamburger" on:click={() => (opened = !opened)} aria-label="Open menu">
                 <div class="hamburger__line"></div>
                 <div class="hamburger__line"></div>
             </button>
@@ -47,7 +47,7 @@
         <div class="main">
             <div class="menu">
                 <ul class="menu__item">
-                    <button class="cross" on:click={() => (opened = !opened)}>
+                    <button class="cross" on:click={() => (opened = !opened)} aria-label="Close menu">
                         <div class="cross__line cross__line-h"></div>
                         <div class="cross__line cross__line-v"></div>
                     </button>
